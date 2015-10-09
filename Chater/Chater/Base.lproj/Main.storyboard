@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rpj-D1-Hlx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="N1W-L2-bgd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rpj-D1-Hlx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0yi-NL-blR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fcv-zE-u96" kind="relationship" relationship="rootViewController" id="nBe-Kb-jBT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdA-mL-4SA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="615" y="-381"/>
+        </scene>
+        <!--好友列表-->
+        <scene sceneID="Oqz-z6-ZLY">
+            <objects>
+                <tableViewController id="Fcv-zE-u96" customClass="FriendsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xth-t3-Gho">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="svc-3z-Ker">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="svc-3z-Ker" id="dge-a0-GNq">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="akc-5C-Cau" kind="show" id="H5I-eZ-V4V"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Fcv-zE-u96" id="fkY-Ep-Tjl"/>
+                            <outlet property="delegate" destination="Fcv-zE-u96" id="WeS-hv-bxC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="好友列表" id="Wtf-aO-Sjy">
+                        <barButtonItem key="rightBarButtonItem" title="刷新" id="DN6-7j-g98">
+                            <connections>
+                                <action selector="reflash:" destination="Fcv-zE-u96" id="Dsu-aR-NwL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYD-qz-JSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1304" y="-406"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="T7b-sG-4wL">
+            <objects>
+                <viewController id="akc-5C-Cau" customClass="SignChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kzN-zS-Epy"/>
+                        <viewControllerLayoutGuide type="bottom" id="ajV-IY-UgV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9FF-1H-Fby">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="ZoU-wG-TY2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZI-4p-Igj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="-406"/>
+        </scene>
+    </scenes>
+</document>

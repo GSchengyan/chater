@@ -1,0 +1,3 @@
+pod 'AVOSCloudIM'
+pod 'Masonry'
+pod 'JSQMessagesViewController'
