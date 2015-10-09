@@ -1,3 +1,4 @@
 pod 'AVOSCloudIM'
 pod 'Masonry'
 pod 'JSQMessagesViewController'
+pod 'SDWebImage', '~>3.7'
