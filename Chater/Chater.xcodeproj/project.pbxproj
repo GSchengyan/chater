@@ -20,6 +20,11 @@
 		46C0697B1BC7700600CC8A8A /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C0697A1BC7700600CC8A8A /* ChatRoomViewController.m */; };
 		46C0697F1BC7701300CC8A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C0697E1BC7701300CC8A8A /* AppDelegate.m */; };
 		46C069821BC7A14D00CC8A8A /* SignChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C069811BC7A14D00CC8A8A /* SignChatViewController.m */; };
+		46DB38FA1BCA47E5000CEEFC /* my.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 46DB38F91BCA47E5000CEEFC /* my.jpg */; };
+		46DB38FD1BCAB99F000CEEFC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB38FC1BCAB99F000CEEFC /* RootViewController.m */; };
+		46DB39011BCABA72000CEEFC /* FriendShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB39001BCABA72000CEEFC /* FriendShareController.m */; };
+		46DB39081BCABAC7000CEEFC /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB39071BCABAC7000CEEFC /* SettingController.m */; };
+		46DB390C1BCABF00000CEEFC /* IMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB390B1BCABF00000CEEFC /* IMManager.m */; };
 		8A844861780458BCB1EF9428 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 983944A6F9C0A0B9183566FF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +64,15 @@
 		46C0697E1BC7701300CC8A8A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		46C069801BC7A14D00CC8A8A /* SignChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignChatViewController.h; sourceTree = "<group>"; };
 		46C069811BC7A14D00CC8A8A /* SignChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignChatViewController.m; sourceTree = "<group>"; };
+		46DB38F91BCA47E5000CEEFC /* my.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = my.jpg; sourceTree = "<group>"; };
+		46DB38FB1BCAB99F000CEEFC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		46DB38FC1BCAB99F000CEEFC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		46DB38FF1BCABA72000CEEFC /* FriendShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendShareController.h; sourceTree = "<group>"; };
+		46DB39001BCABA72000CEEFC /* FriendShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendShareController.m; sourceTree = "<group>"; };
+		46DB39061BCABAC7000CEEFC /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		46DB39071BCABAC7000CEEFC /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		46DB390A1BCABF00000CEEFC /* IMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMManager.h; sourceTree = "<group>"; };
+		46DB390B1BCABF00000CEEFC /* IMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMManager.m; sourceTree = "<group>"; };
 		983944A6F9C0A0B9183566FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26F8BD11D62D6E6D6AC24ED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +132,7 @@
 		4602B6DB1BC6BC17002AAA71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46DB38F91BCA47E5000CEEFC /* my.jpg */,
 				4602B6DC1BC6BC17002AAA71 /* Info.plist */,
 				4602B6DD1BC6BC17002AAA71 /* main.m */,
 			);
@@ -144,6 +159,7 @@
 		46C069621BC6D25800CC8A8A /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				46DB39091BCABEEC000CEEFC /* Manager */,
 				46C0697C1BC7701300CC8A8A /* appdelegate */,
 				46C069671BC76E3600CC8A8A /* sence */,
 				46C069631BC6D25800CC8A8A /* Categroy */,
@@ -163,6 +179,8 @@
 		46C069671BC76E3600CC8A8A /* sence */ = {
 			isa = PBXGroup;
 			children = (
+				46DB39021BCABAA9000CEEFC /* Setting */,
+				46DB38FE1BCABA58000CEEFC /* firendShare */,
 				46C0696D1BC76EA100CC8A8A /* chatroom */,
 				46C069681BC76E3600CC8A8A /* friend */,
 				46C0696B1BC76E3600CC8A8A /* user */,
@@ -246,8 +264,61 @@
 			children = (
 				46C0697D1BC7701300CC8A8A /* AppDelegate.h */,
 				46C0697E1BC7701300CC8A8A /* AppDelegate.m */,
+				46DB38FB1BCAB99F000CEEFC /* RootViewController.h */,
+				46DB38FC1BCAB99F000CEEFC /* RootViewController.m */,
 			);
 			path = appdelegate;
+			sourceTree = "<group>";
+		};
+		46DB38FE1BCABA58000CEEFC /* firendShare */ = {
+			isa = PBXGroup;
+			children = (
+				46DB38FF1BCABA72000CEEFC /* FriendShareController.h */,
+				46DB39001BCABA72000CEEFC /* FriendShareController.m */,
+			);
+			path = firendShare;
+			sourceTree = "<group>";
+		};
+		46DB39021BCABAA9000CEEFC /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				46DB39031BCABAA9000CEEFC /* Controller */,
+				46DB39041BCABAA9000CEEFC /* Model */,
+				46DB39051BCABAA9000CEEFC /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		46DB39031BCABAA9000CEEFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46DB39061BCABAC7000CEEFC /* SettingController.h */,
+				46DB39071BCABAC7000CEEFC /* SettingController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		46DB39041BCABAA9000CEEFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46DB39051BCABAA9000CEEFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46DB39091BCABEEC000CEEFC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				46DB390A1BCABF00000CEEFC /* IMManager.h */,
+				46DB390B1BCABF00000CEEFC /* IMManager.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		BFC23CA8B2F5D2E121B4A631 /* Pods */ = {
@@ -349,6 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46DB38FA1BCA47E5000CEEFC /* my.jpg in Resources */,
 				4602B6E71BC6BC17002AAA71 /* Main.storyboard in Resources */,
 				4602B6EC1BC6BC17002AAA71 /* LaunchScreen.xib in Resources */,
 				4602B6E91BC6BC17002AAA71 /* Images.xcassets in Resources */,
@@ -405,12 +477,16 @@
 			files = (
 				4602B6DE1BC6BC17002AAA71 /* main.m in Sources */,
 				46C069741BC76FD000CC8A8A /* LoginViewController.m in Sources */,
+				46DB39081BCABAC7000CEEFC /* SettingController.m in Sources */,
 				46C069781BC76FEE00CC8A8A /* FriendsTableViewController.m in Sources */,
 				46C069821BC7A14D00CC8A8A /* SignChatViewController.m in Sources */,
 				46C0697B1BC7700600CC8A8A /* ChatRoomViewController.m in Sources */,
+				46DB38FD1BCAB99F000CEEFC /* RootViewController.m in Sources */,
+				46DB390C1BCABF00000CEEFC /* IMManager.m in Sources */,
 				46C069661BC6D27700CC8A8A /* AVUser+Action.m in Sources */,
 				46C069751BC76FD000CC8A8A /* RegisterViewController.m in Sources */,
 				46C0697F1BC7701300CC8A8A /* AppDelegate.m in Sources */,
+				46DB39011BCABA72000CEEFC /* FriendShareController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

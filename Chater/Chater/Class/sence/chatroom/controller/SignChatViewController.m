@@ -10,6 +10,28 @@
 #import "JSQPhotoMediaItem.h"
 #import "JSQMessage.h"
 #import "UIImage+JSQMessages.h"
+#import "JSQMessagesAvatarImage.h"
+#import "JSQMessagesAvatarImageFactory.h"
+#import "JSQMessagesBubbleImageFactory.h"
+#import <JSQMessagesViewController/JSQMessage.h>
+#import "UIColor+JSQMessages.h"
+#import "AVIMClient.h"
+#import "AVUser.h"
+#import "AVIMConversation.h"
+
+@interface SignChatViewController()<AVIMClientDelegate>
+
+@property (nonatomic,strong) NSMutableArray * messages;
+
+@property (strong, nonatomic) JSQMessagesBubbleImage *outgoingBubbleImageData;
+
+@property (strong, nonatomic) JSQMessagesBubbleImage *incomingBubbleImageData;
+
+
+@property (nonatomic,strong) AVIMClient * client;
+
+@end
+
 
 @implementation SignChatViewController
 
@@ -22,8 +44,8 @@
     
     self.inputToolbar.contentView.textView.pasteDelegate = self;
     
-    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
-    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+//    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
+//    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     
     self.showLoadEarlierMessagesHeader = YES;
     
@@ -35,6 +57,14 @@
                                                                              action:nil];
     
     self.title = self.chater.username;
+    
+    
+    
+    JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
+    
+    
+    self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
+    self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
 }
 
 
@@ -44,14 +74,56 @@
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
 }
 
+
+-(void)didPressSendButton:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date{
+    NSLog(@"text:%@,senderID:%@,senderDisplayName:%@,data:%@",text,senderId,senderDisplayName,date);
+    
+    JSQMessage *message = [JSQMessage messageWithSenderId:senderId displayName:senderDisplayName text:text];
+    
+    
+    [self.client createConversationWithName:@"聊天" clientIds:@[self.chater.username] callback:^(AVIMConversation *conversation, NSError *error) {
+                AVIMMessage *message = [AVIMMessage messageWithContent:text];
+                [conversation sendMessage:message callback:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        NSLog(@"发送成功");
+                    }
+                }];
+    }];
+
+    
+    
+    [self.messages addObject:message];
+    [self finishSendingMessageAnimated:YES];
+}
+
+
 #pragma mark - UICollectionView DataSource 
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 1;
+    return self.messages.count;
 }
+
 
 - (nonnull UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
     JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
+
+    
+    
+    JSQMessage *msg = [self.messages objectAtIndex:indexPath.item];
+    
+    if (!msg.isMediaMessage) {
+        
+        if ([msg.senderId isEqualToString:self.senderId]) {
+            cell.textView.textColor = [UIColor blackColor];
+        }
+        else {
+            cell.textView.textColor = [UIColor whiteColor];
+        }
+        
+        cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
+                                              NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
+    }
+
     
     return cell;
 }
@@ -60,16 +132,30 @@
 #pragma mark - JSQMessagesCollectionViewDataSource
 
 
+//返回数据
 -(id<JSQMessageData>)collectionView:(JSQMessagesCollectionView *)collectionView messageDataForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+    return self.messages[indexPath.row];
 }
 
+//返回气泡的方法
 - (id<JSQMessageBubbleImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+
+    
+    JSQMessage *message = self.messages[indexPath.row];
+    if ([message.senderId isEqualToString:[[AVUser currentUser] username]]) {
+        return self.outgoingBubbleImageData;
+    }else{
+        return self.incomingBubbleImageData;
+    }
 }
 
+//返回人物头像的回调方法
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+    
+    JSQMessagesAvatarImage *image = [JSQMessagesAvatarImage avatarWithImage:[UIImage imageNamed:@"my.jpg"]];
+//    JSQMessagesAvatarImage *cookImage = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"demo_avatar_cook"]
+//                                                                                   diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
+    return image;
 }
 
 
@@ -103,10 +189,10 @@
 }
 
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath{
-    return 0.0f;
+    return 10.0f;
 }
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath{
-    return 0.0f;
+    return 10.0f;
 }
 #pragma mark - JSQMessagesComposerTextViewPasteDelegate methods
 
@@ -120,11 +206,51 @@
                                                  senderDisplayName:self.senderDisplayName
                                                               date:[NSDate date]
                                                              media:item];
-//        [self.demoData.messages addObject:message];
+        [self.messages addObject:message];
         [self finishSendingMessage];
         return NO;
     }
     return YES;
 }
+
+
+
+#pragma mark - AVIMClientDelegate
+
+-(void)conversation:(AVIMConversation *)conversation didReceiveTypedMessage:(AVIMTypedMessage *)message{
+    NSLog(@"%@",message.text);
+}
+
+-(void)conversation:(AVIMConversation *)conversation didReceiveCommonMessage:(AVIMMessage *)message{
+    NSLog(@"%@",message.content);
+    JSQMessage *jsqmessage = [JSQMessage messageWithSenderId:message.clientId displayName:@"test" text:message.content];
+    [self.messages addObject:jsqmessage];
+    [self finishReceivingMessageAnimated:YES];
+}
+
+#pragma mark - getting and setting
+
+- (NSMutableArray *)messages{
+    if (!_messages) {
+        _messages = [NSMutableArray array];
+        
+    }
+    return _messages;
+}
+
+
+
+
+-(AVIMClient *)client{
+    if (!_client) {
+        _client = [AVIMClient defaultClient];
+        _client.delegate = self;
+        [_client openWithClientId:[[AVUser currentUser] username] callback:^(BOOL succeeded, NSError *error) {
+            NSLog(@"对话打开成功");
+        }];
+    }
+    return _client;
+}
+
 
 @end
