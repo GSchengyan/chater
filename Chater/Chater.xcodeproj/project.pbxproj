@@ -20,11 +20,15 @@
 		46C0697B1BC7700600CC8A8A /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C0697A1BC7700600CC8A8A /* ChatRoomViewController.m */; };
 		46C0697F1BC7701300CC8A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C0697E1BC7701300CC8A8A /* AppDelegate.m */; };
 		46C069821BC7A14D00CC8A8A /* SignChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C069811BC7A14D00CC8A8A /* SignChatViewController.m */; };
-		46DB38FA1BCA47E5000CEEFC /* my.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 46DB38F91BCA47E5000CEEFC /* my.jpg */; };
 		46DB38FD1BCAB99F000CEEFC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB38FC1BCAB99F000CEEFC /* RootViewController.m */; };
 		46DB39011BCABA72000CEEFC /* FriendShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB39001BCABA72000CEEFC /* FriendShareController.m */; };
 		46DB39081BCABAC7000CEEFC /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB39071BCABAC7000CEEFC /* SettingController.m */; };
 		46DB390C1BCABF00000CEEFC /* IMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB390B1BCABF00000CEEFC /* IMManager.m */; };
+		46EBEA9E1BCCD32F00ED1800 /* buttonbackgroud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEA9D1BCCD32F00ED1800 /* buttonbackgroud@2x.png */; };
+		46EBEAA01BCCD34400ED1800 /* textbackgroundimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEA9F1BCCD34400ED1800 /* textbackgroundimage@2x.png */; };
+		46EBEAA21BCCD34E00ED1800 /* Welcome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA11BCCD34E00ED1800 /* Welcome@2x.png */; };
+		46EBEAA41BCCD35A00ED1800 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA31BCCD35A00ED1800 /* bg@2x.png */; };
+		46EBEAA61BCCE21D00ED1800 /* backgroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA51BCCE21D00ED1800 /* backgroup.png */; };
 		8A844861780458BCB1EF9428 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 983944A6F9C0A0B9183566FF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +68,6 @@
 		46C0697E1BC7701300CC8A8A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		46C069801BC7A14D00CC8A8A /* SignChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignChatViewController.h; sourceTree = "<group>"; };
 		46C069811BC7A14D00CC8A8A /* SignChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignChatViewController.m; sourceTree = "<group>"; };
-		46DB38F91BCA47E5000CEEFC /* my.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = my.jpg; sourceTree = "<group>"; };
 		46DB38FB1BCAB99F000CEEFC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		46DB38FC1BCAB99F000CEEFC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		46DB38FF1BCABA72000CEEFC /* FriendShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendShareController.h; sourceTree = "<group>"; };
@@ -73,6 +76,12 @@
 		46DB39071BCABAC7000CEEFC /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
 		46DB390A1BCABF00000CEEFC /* IMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMManager.h; sourceTree = "<group>"; };
 		46DB390B1BCABF00000CEEFC /* IMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMManager.m; sourceTree = "<group>"; };
+		46EBEA9A1BCCD17600ED1800 /* Chater.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chater.pch; sourceTree = "<group>"; };
+		46EBEA9D1BCCD32F00ED1800 /* buttonbackgroud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonbackgroud@2x.png"; sourceTree = "<group>"; };
+		46EBEA9F1BCCD34400ED1800 /* textbackgroundimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textbackgroundimage@2x.png"; sourceTree = "<group>"; };
+		46EBEAA11BCCD34E00ED1800 /* Welcome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome@2x.png"; sourceTree = "<group>"; };
+		46EBEAA31BCCD35A00ED1800 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		46EBEAA51BCCE21D00ED1800 /* backgroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroup.png; sourceTree = "<group>"; };
 		983944A6F9C0A0B9183566FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26F8BD11D62D6E6D6AC24ED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,9 +141,9 @@
 		4602B6DB1BC6BC17002AAA71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				46DB38F91BCA47E5000CEEFC /* my.jpg */,
 				4602B6DC1BC6BC17002AAA71 /* Info.plist */,
 				4602B6DD1BC6BC17002AAA71 /* main.m */,
+				46EBEA9A1BCCD17600ED1800 /* Chater.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -159,6 +168,7 @@
 		46C069621BC6D25800CC8A8A /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				46EBEA9B1BCCD30700ED1800 /* Resources */,
 				46DB39091BCABEEC000CEEFC /* Manager */,
 				46C0697C1BC7701300CC8A8A /* appdelegate */,
 				46C069671BC76E3600CC8A8A /* sence */,
@@ -321,6 +331,26 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		46EBEA9B1BCCD30700ED1800 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46EBEA9C1BCCD31F00ED1800 /* image */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		46EBEA9C1BCCD31F00ED1800 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				46EBEA9D1BCCD32F00ED1800 /* buttonbackgroud@2x.png */,
+				46EBEA9F1BCCD34400ED1800 /* textbackgroundimage@2x.png */,
+				46EBEAA11BCCD34E00ED1800 /* Welcome@2x.png */,
+				46EBEAA31BCCD35A00ED1800 /* bg@2x.png */,
+				46EBEAA51BCCE21D00ED1800 /* backgroup.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		BFC23CA8B2F5D2E121B4A631 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,11 +450,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46DB38FA1BCA47E5000CEEFC /* my.jpg in Resources */,
 				4602B6E71BC6BC17002AAA71 /* Main.storyboard in Resources */,
+				46EBEAA01BCCD34400ED1800 /* textbackgroundimage@2x.png in Resources */,
 				4602B6EC1BC6BC17002AAA71 /* LaunchScreen.xib in Resources */,
 				4602B6E91BC6BC17002AAA71 /* Images.xcassets in Resources */,
+				46EBEAA21BCCD34E00ED1800 /* Welcome@2x.png in Resources */,
 				46C069551BC6C04700CC8A8A /* LoginAndRegister.storyboard in Resources */,
+				46EBEA9E1BCCD32F00ED1800 /* buttonbackgroud@2x.png in Resources */,
+				46EBEAA61BCCE21D00ED1800 /* backgroup.png in Resources */,
+				46EBEAA41BCCD35A00ED1800 /* bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +647,9 @@
 			baseConfigurationReference = 3C3E08820BC9115093E4B57D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = chater/chater.pch;
 				INFOPLIST_FILE = Chater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -625,7 +661,9 @@
 			baseConfigurationReference = F26F8BD11D62D6E6D6AC24ED /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = chater/chater.pch;
 				INFOPLIST_FILE = Chater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
