@@ -12,6 +12,9 @@
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *txt4UserName;
 @property (weak, nonatomic) IBOutlet UITextField *txt4PassWord;
+@property (weak, nonatomic) IBOutlet UIButton *btn4register;
+@property (weak, nonatomic) IBOutlet UIButton *btn4login;
+
 
 @end
 
@@ -19,13 +22,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UIImageView *backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    [self.view addSubview:backImageView];
+    
+    [backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
+    [self.view bringSubviewToFront:self.txt4UserName];
+    [self.view bringSubviewToFront:self.txt4PassWord];
+
+    [self.view bringSubviewToFront:self.btn4login];
+    [self.view bringSubviewToFront:self.btn4register];
+    
+    [self buildUI];
+}
+
+- (void)buildUI{
+    //用户名输入框
+    [self.txt4UserName mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(100);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(self.view).multipliedBy(0.7);
+    }];
+    
+    //密码输入框
+    [self.txt4PassWord mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.txt4UserName.mas_bottom).offset(40);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(self.txt4UserName);
+    }];
+    
+    //注册按钮
+    [self.btn4register mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.txt4PassWord.mas_bottom).offset(80);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(self.txt4PassWord);
+    }];
+    
+    //登陆按钮
+    [self.btn4login mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.btn4register.mas_bottom).offset(40);
+        make.centerX.equalTo(self.view);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)registerAction:(id)sender {
     
     AVUser *user = [AVUser new];
@@ -41,14 +87,9 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)loginAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
+
 
 @end

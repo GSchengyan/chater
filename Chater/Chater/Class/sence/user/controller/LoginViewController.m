@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AVGeoPoint.h"
 
-@interface LoginViewController ()<CLLocationManagerDelegate>
+@interface LoginViewController ()<CLLocationManagerDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txt4UserName;
 
 @property (weak, nonatomic) IBOutlet UITextField *txt4PassWord;
@@ -42,6 +42,8 @@
         self.point = [AVGeoPoint geoPointWithLocation:self.locationManager.location];
     }
 
+    self.txt4PassWord.delegate = self;
+    self.txt4UserName.delegate = self;
     
     [self buildUI];
 
@@ -77,12 +79,33 @@
         make.width.equalTo(self.backImageView).multipliedBy(0.7);
     }];
     
+    //输入框添加一个圈
+    UIImageView *namebackimage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"textbackgroundimage"]];
+    [self.view addSubview:namebackimage];
+    [namebackimage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.txt4UserName);
+        make.height.equalTo(self.txt4UserName);
+        make.width.equalTo(self.txt4UserName).offset(20);
+    }];
+    [self.view bringSubviewToFront:self.txt4UserName];
+    
     //密码输入框
     [self.txt4PassWord mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.backImageView);
         make.top.equalTo(self.txt4UserName.mas_bottom).offset(20);
         make.width.equalTo(self.txt4UserName);
     }];
+    
+    //输入框添加一个圈
+    UIImageView *passwordBackimage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"textbackgroundimage"]];
+    passwordBackimage.userInteractionEnabled = YES;
+    [self.view addSubview:passwordBackimage];
+    [passwordBackimage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.txt4PassWord);
+        make.height.equalTo(self.txt4PassWord);
+        make.width.equalTo(self.txt4PassWord).offset(20);
+    }];
+    [self.view bringSubviewToFront:self.txt4PassWord];
     
     //登陆按钮
     [self.btn4login mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -97,9 +120,6 @@
         make.centerX.equalTo(self.backImageView);
         make.top.equalTo(self.btn4login.mas_bottom).offset(10);
     }];
-    
-    
-    
 }
 
 
@@ -134,6 +154,11 @@
     return YES;
 }
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(nonnull CLLocationManager *)manager didUpdateLocations:(nonnull NSArray *)locations{
