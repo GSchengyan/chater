@@ -12,6 +12,7 @@
 		4602B6E91BC6BC17002AAA71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4602B6E81BC6BC17002AAA71 /* Images.xcassets */; };
 		4602B6EC1BC6BC17002AAA71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4602B6EA1BC6BC17002AAA71 /* LaunchScreen.xib */; };
 		4602B6F81BC6BC17002AAA71 /* ChaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4602B6F71BC6BC17002AAA71 /* ChaterTests.m */; };
+		46AE51101BCE5058002B4FEE /* JWTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AE510F1BCE5058002B4FEE /* JWTextField.m */; };
 		46C069551BC6C04700CC8A8A /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C069541BC6C04700CC8A8A /* LoginAndRegister.storyboard */; };
 		46C069661BC6D27700CC8A8A /* AVUser+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C069651BC6D27700CC8A8A /* AVUser+Action.m */; };
 		46C069741BC76FD000CC8A8A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C069711BC76FD000CC8A8A /* LoginViewController.m */; };
@@ -53,6 +54,8 @@
 		4602B6F11BC6BC17002AAA71 /* ChaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4602B6F61BC6BC17002AAA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4602B6F71BC6BC17002AAA71 /* ChaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChaterTests.m; sourceTree = "<group>"; };
+		46AE510E1BCE5058002B4FEE /* JWTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTextField.h; sourceTree = "<group>"; };
+		46AE510F1BCE5058002B4FEE /* JWTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTextField.m; sourceTree = "<group>"; };
 		46C069541BC6C04700CC8A8A /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
 		46C069641BC6D27700CC8A8A /* AVUser+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVUser+Action.h"; sourceTree = "<group>"; };
 		46C069651BC6D27700CC8A8A /* AVUser+Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVUser+Action.m"; sourceTree = "<group>"; };
@@ -165,9 +168,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		46AE510D1BCE4E0E002B4FEE /* Generary */ = {
+			isa = PBXGroup;
+			children = (
+				46AE510E1BCE5058002B4FEE /* JWTextField.h */,
+				46AE510F1BCE5058002B4FEE /* JWTextField.m */,
+			);
+			path = Generary;
+			sourceTree = "<group>";
+		};
 		46C069621BC6D25800CC8A8A /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				46AE510D1BCE4E0E002B4FEE /* Generary */,
 				46EBEA9B1BCCD30700ED1800 /* Resources */,
 				46DB39091BCABEEC000CEEFC /* Manager */,
 				46C0697C1BC7701300CC8A8A /* appdelegate */,
@@ -509,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46AE51101BCE5058002B4FEE /* JWTextField.m in Sources */,
 				4602B6DE1BC6BC17002AAA71 /* main.m in Sources */,
 				46C069741BC76FD000CC8A8A /* LoginViewController.m in Sources */,
 				46DB39081BCABAC7000CEEFC /* SettingController.m in Sources */,
