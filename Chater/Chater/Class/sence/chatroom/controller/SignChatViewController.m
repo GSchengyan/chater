@@ -41,7 +41,7 @@
     self.senderId = [AVUser currentUser].username;
     self.senderDisplayName = [AVUser currentUser].username;
     
-    
+    self.client.delegate = self;
     self.inputToolbar.contentView.textView.pasteDelegate = self;
     
 //    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
@@ -105,7 +105,7 @@
 
 
 - (nonnull UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
+   JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
 
     
     
@@ -126,6 +126,7 @@
 
     
     return cell;
+    
 }
 
 
@@ -152,7 +153,7 @@
 //返回人物头像的回调方法
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    JSQMessagesAvatarImage *image = [JSQMessagesAvatarImage avatarWithImage:[UIImage imageNamed:@"my.jpg"]];
+    JSQMessagesAvatarImage *image = [JSQMessagesAvatarImage avatarWithImage:[UIImage imageNamed:@"image2.jpg"]];
 //    JSQMessagesAvatarImage *cookImage = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"demo_avatar_cook"]
 //                                                                                   diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
     return image;
@@ -244,7 +245,7 @@
 -(AVIMClient *)client{
     if (!_client) {
         _client = [AVIMClient defaultClient];
-        _client.delegate = self;
+//        _client.delegate = self;
         [_client openWithClientId:[[AVUser currentUser] username] callback:^(BOOL succeeded, NSError *error) {
             NSLog(@"对话打开成功");
         }];

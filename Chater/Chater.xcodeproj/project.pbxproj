@@ -29,6 +29,7 @@
 		46EBEAA21BCCD34E00ED1800 /* Welcome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA11BCCD34E00ED1800 /* Welcome@2x.png */; };
 		46EBEAA41BCCD35A00ED1800 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA31BCCD35A00ED1800 /* bg@2x.png */; };
 		46EBEAA61BCCE21D00ED1800 /* backgroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA51BCCE21D00ED1800 /* backgroup.png */; };
+		72DA619D1BCF56C00029EC0F /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72DA619C1BCF56C00029EC0F /* image2.jpg */; settings = {ASSET_TAGS = (); }; };
 		8A844861780458BCB1EF9428 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 983944A6F9C0A0B9183566FF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		46EBEAA11BCCD34E00ED1800 /* Welcome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome@2x.png"; sourceTree = "<group>"; };
 		46EBEAA31BCCD35A00ED1800 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 		46EBEAA51BCCE21D00ED1800 /* backgroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroup.png; sourceTree = "<group>"; };
+		72DA619C1BCF56C00029EC0F /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
 		983944A6F9C0A0B9183566FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26F8BD11D62D6E6D6AC24ED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +260,7 @@
 				46C0697A1BC7700600CC8A8A /* ChatRoomViewController.m */,
 				46C069801BC7A14D00CC8A8A /* SignChatViewController.h */,
 				46C069811BC7A14D00CC8A8A /* SignChatViewController.m */,
+				72DA619C1BCF56C00029EC0F /* image2.jpg */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				4602B6D51BC6BC17002AAA71 /* Frameworks */,
 				4602B6D61BC6BC17002AAA71 /* Resources */,
 				3ED02EE716DF325571F6E826 /* Copy Pods Resources */,
+				9CA0BB08FE9EA8B6C664D23F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,6 +423,7 @@
 				TargetAttributes = {
 					4602B6D71BC6BC17002AAA71 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 6MLWWX8X77;
 					};
 					4602B6F01BC6BC17002AAA71 = {
 						CreatedOnToolsVersion = 6.4;
@@ -455,6 +460,7 @@
 				4602B6EC1BC6BC17002AAA71 /* LaunchScreen.xib in Resources */,
 				4602B6E91BC6BC17002AAA71 /* Images.xcassets in Resources */,
 				46EBEAA21BCCD34E00ED1800 /* Welcome@2x.png in Resources */,
+				72DA619D1BCF56C00029EC0F /* image2.jpg in Resources */,
 				46C069551BC6C04700CC8A8A /* LoginAndRegister.storyboard in Resources */,
 				46EBEA9E1BCCD32F00ED1800 /* buttonbackgroud@2x.png in Resources */,
 				46EBEAA61BCCE21D00ED1800 /* backgroup.png in Resources */,
@@ -500,6 +506,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9CA0BB08FE9EA8B6C664D23F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -648,6 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = chater/chater.pch;
 				INFOPLIST_FILE = Chater/Info.plist;
@@ -662,6 +684,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = chater/chater.pch;
 				INFOPLIST_FILE = Chater/Info.plist;
