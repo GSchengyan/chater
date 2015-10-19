@@ -12,7 +12,6 @@
 
 @property (nonatomic,strong) UITextField * mainTextField;
 @property (nonatomic,strong) UIImageView * backImage;
-
 @end
 
 
@@ -33,6 +32,22 @@
 //自定义UI
 - (void)buildUI{
     
+    [self addSubview:self.backImage];
+    [self addSubview:self.mainTextField];
+    
+}
+
+-(UITextField *)mainTextField{
+    if (!_mainTextField) {
+        _mainTextField = [UITextField new];
+    }
+    return _mainTextField;
+}
+-(UIImageView *)backImage{
+    if (!_backImage) {
+        _backImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"textbackgroundimage"]];
+    }
+    return _backImage;
 }
 
 
