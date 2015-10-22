@@ -21,6 +21,7 @@
 		46C0697B1BC7700600CC8A8A /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C0697A1BC7700600CC8A8A /* ChatRoomViewController.m */; };
 		46C0697F1BC7701300CC8A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C0697E1BC7701300CC8A8A /* AppDelegate.m */; };
 		46C069821BC7A14D00CC8A8A /* SignChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C069811BC7A14D00CC8A8A /* SignChatViewController.m */; };
+		46D44F331BD8D96200F41F63 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D44F321BD8D96200F41F63 /* LocationManager.m */; settings = {ASSET_TAGS = (); }; };
 		46DB38FD1BCAB99F000CEEFC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB38FC1BCAB99F000CEEFC /* RootViewController.m */; };
 		46DB39011BCABA72000CEEFC /* FriendShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB39001BCABA72000CEEFC /* FriendShareController.m */; };
 		46DB39081BCABAC7000CEEFC /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB39071BCABAC7000CEEFC /* SettingController.m */; };
@@ -72,6 +73,8 @@
 		46C0697E1BC7701300CC8A8A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		46C069801BC7A14D00CC8A8A /* SignChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignChatViewController.h; sourceTree = "<group>"; };
 		46C069811BC7A14D00CC8A8A /* SignChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignChatViewController.m; sourceTree = "<group>"; };
+		46D44F311BD8D96200F41F63 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		46D44F321BD8D96200F41F63 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		46DB38FB1BCAB99F000CEEFC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		46DB38FC1BCAB99F000CEEFC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		46DB38FF1BCABA72000CEEFC /* FriendShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendShareController.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 			children = (
 				46DB390A1BCABF00000CEEFC /* IMManager.h */,
 				46DB390B1BCABF00000CEEFC /* IMManager.m */,
+				46D44F311BD8D96200F41F63 /* LocationManager.h */,
+				46D44F321BD8D96200F41F63 /* LocationManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 				46C069821BC7A14D00CC8A8A /* SignChatViewController.m in Sources */,
 				46C0697B1BC7700600CC8A8A /* ChatRoomViewController.m in Sources */,
 				46DB38FD1BCAB99F000CEEFC /* RootViewController.m in Sources */,
+				46D44F331BD8D96200F41F63 /* LocationManager.m in Sources */,
 				46DB390C1BCABF00000CEEFC /* IMManager.m in Sources */,
 				46C069661BC6D27700CC8A8A /* AVUser+Action.m in Sources */,
 				46C069751BC76FD000CC8A8A /* RegisterViewController.m in Sources */,

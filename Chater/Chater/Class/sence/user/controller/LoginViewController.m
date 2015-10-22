@@ -12,6 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AVGeoPoint.h"
 #import "MBProgressHUD.h"
+#import "LocationManager.h"
 
 @interface LoginViewController ()<CLLocationManagerDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txt4UserName;
@@ -22,11 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn4register;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 
-
-@property (nonatomic,strong)  CLLocationManager * locationManager;
-
-@property (nonatomic,strong) AVGeoPoint *point;
-
 @end
 
 @implementation LoginViewController
@@ -34,14 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager requestWhenInUseAuthorization];
-    [self.locationManager startUpdatingLocation];
-    
-    if (self.locationManager.location) {
-
-        self.point = [AVGeoPoint geoPointWithLocation:self.locationManager.location];
-    }
 
     self.txt4PassWord.delegate = self;
     self.txt4UserName.delegate = self;
@@ -132,21 +120,26 @@
 
 //登陆事件
 - (IBAction)loginAction:(id)sender {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"登陆中......";
+    //登陆
     [AVUser logInWithUsernameInBackground:self.txt4UserName.text password:self.txt4PassWord.text block:^(AVUser *user, NSError *error) {
         
         if (user) {
-            [user setObject:self.point forKey:@"location"];
-            
-            [user save];
+            hud.labelText = @"登陆成功";
+            //开启定位
+            [LocationManager defaultManager];
+            //跳转到main storyboard.
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UINavigationController *nav = [sb instantiateInitialViewController];
-            
             AppDelegate *mydelegate = [UIApplication sharedApplication].delegate;
             mydelegate.window.rootViewController = nav;
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            [hud hide:YES afterDelay:2];
         }else{
-            NSLog(@"%@",error);
+            hud.labelText = @"登陆失败";
+            [hud hide:YES afterDelay:2];
         }
     }];
     
@@ -163,19 +156,5 @@
     return YES;
 }
 
-#pragma mark - CLLocationManagerDelegate
-- (void)locationManager:(nonnull CLLocationManager *)manager didUpdateLocations:(nonnull NSArray *)locations{
-    CLLocation *location = [locations lastObject];
-    self.point = [AVGeoPoint geoPointWithLocation:location];
-}
-
-
--(CLLocationManager *)locationManager{
-    if (!_locationManager) {
-        _locationManager = [CLLocationManager new];
-        _locationManager.delegate = self;
-    }
-    return _locationManager;
-}
 
 @end

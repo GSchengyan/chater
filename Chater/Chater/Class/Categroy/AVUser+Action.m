@@ -7,7 +7,18 @@
 //
 
 #import "AVUser+Action.h"
+#import "AVGeoPoint.h"
 
 @implementation AVUser (Action)
+
+
+- (void)setLocation:(CLLocation *)location{
+    [self setObject:[AVGeoPoint geoPointWithLocation:location] forKey:@"location"];
+    [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"上传用户信息成功");
+        }
+    }];
+}
 
 @end

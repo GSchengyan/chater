@@ -7,10 +7,11 @@
 //
 
 #import "AVUser.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface AVUser (Action)
 
-//- (void)login
+- (void)setLocation:(CLLocation *)location;
 
 
 @end
