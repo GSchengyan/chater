@@ -31,6 +31,7 @@
 		46EBEAA41BCCD35A00ED1800 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA31BCCD35A00ED1800 /* bg@2x.png */; };
 		46EBEAA61BCCE21D00ED1800 /* backgroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA51BCCE21D00ED1800 /* backgroup.png */; };
 		72DA619D1BCF56C00029EC0F /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72DA619C1BCF56C00029EC0F /* image2.jpg */; };
+		72DC5D9C1BD8D47A00B88686 /* PutFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DC5D9B1BD8D47A00B88686 /* PutFriendVC.m */; settings = {ASSET_TAGS = (); }; };
 		8A844861780458BCB1EF9428 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 983944A6F9C0A0B9183566FF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,8 @@
 		46EBEAA31BCCD35A00ED1800 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 		46EBEAA51BCCE21D00ED1800 /* backgroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroup.png; sourceTree = "<group>"; };
 		72DA619C1BCF56C00029EC0F /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		72DC5D9A1BD8D47A00B88686 /* PutFriendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutFriendVC.h; sourceTree = "<group>"; };
+		72DC5D9B1BD8D47A00B88686 /* PutFriendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutFriendVC.m; sourceTree = "<group>"; };
 		983944A6F9C0A0B9183566FF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26F8BD11D62D6E6D6AC24ED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +136,7 @@
 		4602B6DA1BC6BC17002AAA71 /* Chater */ = {
 			isa = PBXGroup;
 			children = (
+				72DC5D901BD8D15D00B88686 /* friends */,
 				46C069621BC6D25800CC8A8A /* Class */,
 				4602B6E51BC6BC17002AAA71 /* Main.storyboard */,
 				46C069541BC6C04700CC8A8A /* LoginAndRegister.storyboard */,
@@ -367,6 +371,15 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		72DC5D901BD8D15D00B88686 /* friends */ = {
+			isa = PBXGroup;
+			children = (
+				72DC5D9A1BD8D47A00B88686 /* PutFriendVC.h */,
+				72DC5D9B1BD8D47A00B88686 /* PutFriendVC.m */,
+			);
+			path = friends;
+			sourceTree = "<group>";
+		};
 		BFC23CA8B2F5D2E121B4A631 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +566,7 @@
 				46DB38FD1BCAB99F000CEEFC /* RootViewController.m in Sources */,
 				46DB390C1BCABF00000CEEFC /* IMManager.m in Sources */,
 				46C069661BC6D27700CC8A8A /* AVUser+Action.m in Sources */,
+				72DC5D9C1BD8D47A00B88686 /* PutFriendVC.m in Sources */,
 				46C069751BC76FD000CC8A8A /* RegisterViewController.m in Sources */,
 				46C0697F1BC7701300CC8A8A /* AppDelegate.m in Sources */,
 				46DB39011BCABA72000CEEFC /* FriendShareController.m in Sources */,
@@ -687,6 +701,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = chater/chater.pch;
 				INFOPLIST_FILE = Chater/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ecb84c7b-b780-49a2-b37d-8515f895e941";
@@ -704,6 +719,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = chater/chater.pch;
 				INFOPLIST_FILE = Chater/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ecb84c7b-b780-49a2-b37d-8515f895e941";
