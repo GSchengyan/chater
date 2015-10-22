@@ -41,7 +41,14 @@
     self.senderId = [AVUser currentUser].username;
     self.senderDisplayName = [AVUser currentUser].username;
     
-    self.client.delegate = self;
+    __block SignChatViewController *men = self;
+    [self.client openWithClientId:[[AVUser currentUser] username] callback:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            men.client.delegate = self;
+        }
+    }];
+    
+    
     self.inputToolbar.contentView.textView.pasteDelegate = self;
     
 //    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
@@ -52,11 +59,12 @@
 //    UIImage
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage]
-                                                                              style:UIBarButtonItemStyleBordered
+                                                                              style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:nil];
     
     self.title = self.chater.username;
+    
     
     
     
@@ -85,7 +93,7 @@
                 AVIMMessage *message = [AVIMMessage messageWithContent:text];
                 [conversation sendMessage:message callback:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
-                        NSLog(@"发送成功");
+                        NSLog(@"+++++发送成功");
                     }
                 }];
     }];
@@ -217,13 +225,19 @@
 
 
 #pragma mark - AVIMClientDelegate
-
--(void)conversation:(AVIMConversation *)conversation didReceiveTypedMessage:(AVIMTypedMessage *)message{
-    NSLog(@"%@",message.text);
-}
-
--(void)conversation:(AVIMConversation *)conversation didReceiveCommonMessage:(AVIMMessage *)message{
+- (void)conversation:(AVIMConversation *)conversation messageDelivered:(AVIMMessage *)message{
     NSLog(@"%@",message.content);
+}
+-(void)conversation:(AVIMConversation *)conversation didReceiveTypedMessage:(AVIMTypedMessage *)message{
+//    NSLog(@"%@",message.text);
+}
+//接受代理方法
+-(void)conversation:(AVIMConversation *)conversation didReceiveCommonMessage:(AVIMMessage *)message{
+    NSLog(@"_____%d",message.ioType);
+    NSLog(@"+++++++%@",message.content);
+    
+    NSLog(@"%@=========%@",message.clientId,self.chater.className);
+    
     JSQMessage *jsqmessage = [JSQMessage messageWithSenderId:message.clientId displayName:@"test" text:message.content];
     [self.messages addObject:jsqmessage];
     [self finishReceivingMessageAnimated:YES];
@@ -244,11 +258,8 @@
 
 -(AVIMClient *)client{
     if (!_client) {
+        [AVIMClient resetDefaultClient];
         _client = [AVIMClient defaultClient];
-//        _client.delegate = self;
-        [_client openWithClientId:[[AVUser currentUser] username] callback:^(BOOL succeeded, NSError *error) {
-            NSLog(@"对话打开成功");
-        }];
     }
     return _client;
 }
