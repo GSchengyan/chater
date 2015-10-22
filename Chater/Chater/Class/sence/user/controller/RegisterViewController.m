@@ -40,28 +40,22 @@
 }
 
 - (void)buildUI{
-    //用户名输入框
-//    [self.txt4UserName mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.view).offset(100);
-//        make.centerX.equalTo(self.view);
-//        make.width.equalTo(self.view).multipliedBy(0.7);
-//    }];
     
     __weak typeof(self) weakself = self;
     
+    //用户名输入框
     [self.tf4UserName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakself.view).offset(120);
         make.centerX.equalTo(weakself.view);
         make.width.equalTo(weakself.view).multipliedBy(0.7);
     }];
-//
 //    //密码输入框
     [self.tf4PassWord mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakself.tf4UserName.mas_bottom).offset(20);
         make.centerX.equalTo(weakself.view);
         make.width.equalTo(weakself.tf4UserName);
     }];
-    
+    //密码输入确认框
     [self.tf4SurePassword mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakself.tf4PassWord.mas_bottom).offset(20);
         make.centerX.equalTo(weakself.view);
@@ -86,7 +80,17 @@
     [super didReceiveMemoryWarning];
 }
 
+/**
+ *  注册事件
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)registerAction:(id)sender {
+    
+    if (![self.tf4SurePassword.content isEqualToString:self.tf4PassWord.content]) {
+        NSLog(@"你的两次密码不一样");
+        return;
+    }
     
     AVUser *user = [AVUser new];
     user.username = self.tf4UserName.content;

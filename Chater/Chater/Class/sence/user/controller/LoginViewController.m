@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
 #import "AVGeoPoint.h"
+#import "MBProgressHUD.h"
 
 @interface LoginViewController ()<CLLocationManagerDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txt4UserName;
@@ -128,11 +129,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//登陆事件
 - (IBAction)loginAction:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [AVUser logInWithUsernameInBackground:self.txt4UserName.text password:self.txt4PassWord.text block:^(AVUser *user, NSError *error) {
+        
         if (user) {
-            NSLog(@"登陆成功");
-            
             [user setObject:self.point forKey:@"location"];
             
             [user save];
@@ -141,7 +144,7 @@
             
             AppDelegate *mydelegate = [UIApplication sharedApplication].delegate;
             mydelegate.window.rootViewController = nav;
-            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         }else{
             NSLog(@"%@",error);
         }
