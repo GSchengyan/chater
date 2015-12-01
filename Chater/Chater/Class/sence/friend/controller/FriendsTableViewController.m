@@ -12,6 +12,9 @@
 #import "AVQuery.h"
 #import "ChatRoomViewController.h"
 #import "SignChatViewController.h"
+#import "FriendCell.h"
+
+
 
 @interface FriendsTableViewController ()
 
@@ -21,8 +24,11 @@
 
 @implementation FriendsTableViewController
 
+static NSString * friendCellIdentifier = @"friendCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FriendCell" bundle:nil] forCellReuseIdentifier:friendCellIdentifier];
     
     [self fetchUsers];
 }
@@ -37,6 +43,7 @@
     AVQuery *query = [AVUser query];
     
     [query whereKey:@"location" nearGeoPoint:point withinRadians:10000];
+    [query whereKey:@"username" notEqualTo:user.username];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
@@ -69,6 +76,29 @@
     return self.users.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SignChatViewController *room = [[SignChatViewController alloc] init];
+    room.chater = self.users[indexPath.row];
+    room.hidesBottomBarWhenPushed = YES;
+    [self showViewController:room sender:nil];
+
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    FriendCell *cell = [tableView dequeueReusableCellWithIdentifier:friendCellIdentifier forIndexPath:indexPath];
+    
+    
+    AVUser *user = (AVUser *)self.users[indexPath.row];
+    cell.user = user;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
 
 #pragma mark - getter and setter
 - (NSMutableArray *)users{
@@ -79,15 +109,6 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
-    
-    AVUser *user = (AVUser *)self.users[indexPath.row];
-    cell.textLabel.text = user.username;
-    
-    return cell;
-}
 
 /*
 // Override to support conditional editing of the table view.

@@ -11,7 +11,9 @@
 		4602B6E71BC6BC17002AAA71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4602B6E51BC6BC17002AAA71 /* Main.storyboard */; };
 		4602B6E91BC6BC17002AAA71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4602B6E81BC6BC17002AAA71 /* Images.xcassets */; };
 		4602B6EC1BC6BC17002AAA71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4602B6EA1BC6BC17002AAA71 /* LaunchScreen.xib */; };
-		4602B6F81BC6BC17002AAA71 /* ChaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4602B6F71BC6BC17002AAA71 /* ChaterTests.m */; };
+		462AE3F61C0B2832000C227B /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AE3F41C0B2832000C227B /* FriendCell.m */; };
+		462AE3F71C0B2832000C227B /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AE3F51C0B2832000C227B /* FriendCell.xib */; };
+		468E767F1BDB5D1C0066952B /* CommonSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 468E767E1BDB5D1C0066952B /* CommonSettingCell.m */; };
 		46AE51101BCE5058002B4FEE /* JWTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AE510F1BCE5058002B4FEE /* JWTextField.m */; };
 		46C069551BC6C04700CC8A8A /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C069541BC6C04700CC8A8A /* LoginAndRegister.storyboard */; };
 		46C069661BC6D27700CC8A8A /* AVUser+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C069651BC6D27700CC8A8A /* AVUser+Action.m */; };
@@ -21,7 +23,9 @@
 		46C0697B1BC7700600CC8A8A /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C0697A1BC7700600CC8A8A /* ChatRoomViewController.m */; };
 		46C0697F1BC7701300CC8A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C0697E1BC7701300CC8A8A /* AppDelegate.m */; };
 		46C069821BC7A14D00CC8A8A /* SignChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C069811BC7A14D00CC8A8A /* SignChatViewController.m */; };
-		46D44F331BD8D96200F41F63 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D44F321BD8D96200F41F63 /* LocationManager.m */; settings = {ASSET_TAGS = (); }; };
+		46D263921BFB7F550077177A /* MyImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D263901BFB7F550077177A /* MyImageCell.m */; };
+		46D263931BFB7F550077177A /* MyImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D263911BFB7F550077177A /* MyImageCell.xib */; };
+		46D44F331BD8D96200F41F63 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D44F321BD8D96200F41F63 /* LocationManager.m */; };
 		46DB38FD1BCAB99F000CEEFC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB38FC1BCAB99F000CEEFC /* RootViewController.m */; };
 		46DB39011BCABA72000CEEFC /* FriendShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB39001BCABA72000CEEFC /* FriendShareController.m */; };
 		46DB39081BCABAC7000CEEFC /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DB39071BCABAC7000CEEFC /* SettingController.m */; };
@@ -32,19 +36,9 @@
 		46EBEAA41BCCD35A00ED1800 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA31BCCD35A00ED1800 /* bg@2x.png */; };
 		46EBEAA61BCCE21D00ED1800 /* backgroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EBEAA51BCCE21D00ED1800 /* backgroup.png */; };
 		72DA619D1BCF56C00029EC0F /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72DA619C1BCF56C00029EC0F /* image2.jpg */; };
-		72DC5D9C1BD8D47A00B88686 /* PutFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DC5D9B1BD8D47A00B88686 /* PutFriendVC.m */; settings = {ASSET_TAGS = (); }; };
+		72DC5D9C1BD8D47A00B88686 /* PutFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DC5D9B1BD8D47A00B88686 /* PutFriendVC.m */; };
 		8A844861780458BCB1EF9428 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 983944A6F9C0A0B9183566FF /* libPods.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4602B6F21BC6BC17002AAA71 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4602B6D01BC6BC17002AAA71 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4602B6D71BC6BC17002AAA71;
-			remoteInfo = Chater;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3C3E08820BC9115093E4B57D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,9 +48,13 @@
 		4602B6E61BC6BC17002AAA71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4602B6E81BC6BC17002AAA71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4602B6EB1BC6BC17002AAA71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4602B6F11BC6BC17002AAA71 /* ChaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4602B6F61BC6BC17002AAA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4602B6F71BC6BC17002AAA71 /* ChaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChaterTests.m; sourceTree = "<group>"; };
+		462AE3F31C0B2832000C227B /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		462AE3F41C0B2832000C227B /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
+		462AE3F51C0B2832000C227B /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		468E767D1BDB5D1C0066952B /* CommonSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonSettingCell.h; sourceTree = "<group>"; };
+		468E767E1BDB5D1C0066952B /* CommonSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSettingCell.m; sourceTree = "<group>"; };
 		46AE510E1BCE5058002B4FEE /* JWTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTextField.h; sourceTree = "<group>"; };
 		46AE510F1BCE5058002B4FEE /* JWTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTextField.m; sourceTree = "<group>"; };
 		46C069541BC6C04700CC8A8A /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
@@ -74,6 +72,9 @@
 		46C0697E1BC7701300CC8A8A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		46C069801BC7A14D00CC8A8A /* SignChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignChatViewController.h; sourceTree = "<group>"; };
 		46C069811BC7A14D00CC8A8A /* SignChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignChatViewController.m; sourceTree = "<group>"; };
+		46D2638F1BFB7F550077177A /* MyImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageCell.h; sourceTree = "<group>"; };
+		46D263901BFB7F550077177A /* MyImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImageCell.m; sourceTree = "<group>"; };
+		46D263911BFB7F550077177A /* MyImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyImageCell.xib; sourceTree = "<group>"; };
 		46D44F311BD8D96200F41F63 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		46D44F321BD8D96200F41F63 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		46DB38FB1BCAB99F000CEEFC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -106,13 +107,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4602B6EE1BC6BC17002AAA71 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -131,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				4602B6D81BC6BC17002AAA71 /* Chater.app */,
-				4602B6F11BC6BC17002AAA71 /* ChaterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +175,8 @@
 			children = (
 				46AE510E1BCE5058002B4FEE /* JWTextField.h */,
 				46AE510F1BCE5058002B4FEE /* JWTextField.m */,
+				468E767D1BDB5D1C0066952B /* CommonSettingCell.h */,
+				468E767E1BDB5D1C0066952B /* CommonSettingCell.m */,
 			);
 			path = Generary;
 			sourceTree = "<group>";
@@ -241,6 +236,9 @@
 		46C0696A1BC76E3600CC8A8A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				462AE3F31C0B2832000C227B /* FriendCell.h */,
+				462AE3F41C0B2832000C227B /* FriendCell.m */,
+				462AE3F51C0B2832000C227B /* FriendCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -341,6 +339,9 @@
 		46DB39051BCABAA9000CEEFC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46D2638F1BFB7F550077177A /* MyImageCell.h */,
+				46D263901BFB7F550077177A /* MyImageCell.m */,
+				46D263911BFB7F550077177A /* MyImageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -425,24 +426,6 @@
 			productReference = 4602B6D81BC6BC17002AAA71 /* Chater.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4602B6F01BC6BC17002AAA71 /* ChaterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4602B6FE1BC6BC17002AAA71 /* Build configuration list for PBXNativeTarget "ChaterTests" */;
-			buildPhases = (
-				4602B6ED1BC6BC17002AAA71 /* Sources */,
-				4602B6EE1BC6BC17002AAA71 /* Frameworks */,
-				4602B6EF1BC6BC17002AAA71 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4602B6F31BC6BC17002AAA71 /* PBXTargetDependency */,
-			);
-			name = ChaterTests;
-			productName = ChaterTests;
-			productReference = 4602B6F11BC6BC17002AAA71 /* ChaterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -455,10 +438,6 @@
 					4602B6D71BC6BC17002AAA71 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 6MLWWX8X77;
-					};
-					4602B6F01BC6BC17002AAA71 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 4602B6D71BC6BC17002AAA71;
 					};
 				};
 			};
@@ -476,7 +455,6 @@
 			projectRoot = "";
 			targets = (
 				4602B6D71BC6BC17002AAA71 /* Chater */,
-				4602B6F01BC6BC17002AAA71 /* ChaterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -493,16 +471,11 @@
 				46EBEAA21BCCD34E00ED1800 /* Welcome@2x.png in Resources */,
 				72DA619D1BCF56C00029EC0F /* image2.jpg in Resources */,
 				46C069551BC6C04700CC8A8A /* LoginAndRegister.storyboard in Resources */,
+				462AE3F71C0B2832000C227B /* FriendCell.xib in Resources */,
 				46EBEA9E1BCCD32F00ED1800 /* buttonbackgroud@2x.png in Resources */,
 				46EBEAA61BCCE21D00ED1800 /* backgroup.png in Resources */,
+				46D263931BFB7F550077177A /* MyImageCell.xib in Resources */,
 				46EBEAA41BCCD35A00ED1800 /* bg@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4602B6EF1BC6BC17002AAA71 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,10 +537,13 @@
 				46AE51101BCE5058002B4FEE /* JWTextField.m in Sources */,
 				4602B6DE1BC6BC17002AAA71 /* main.m in Sources */,
 				46C069741BC76FD000CC8A8A /* LoginViewController.m in Sources */,
+				46D263921BFB7F550077177A /* MyImageCell.m in Sources */,
 				46DB39081BCABAC7000CEEFC /* SettingController.m in Sources */,
 				46C069781BC76FEE00CC8A8A /* FriendsTableViewController.m in Sources */,
+				468E767F1BDB5D1C0066952B /* CommonSettingCell.m in Sources */,
 				46C069821BC7A14D00CC8A8A /* SignChatViewController.m in Sources */,
 				46C0697B1BC7700600CC8A8A /* ChatRoomViewController.m in Sources */,
+				462AE3F61C0B2832000C227B /* FriendCell.m in Sources */,
 				46DB38FD1BCAB99F000CEEFC /* RootViewController.m in Sources */,
 				46D44F331BD8D96200F41F63 /* LocationManager.m in Sources */,
 				46DB390C1BCABF00000CEEFC /* IMManager.m in Sources */,
@@ -579,23 +555,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4602B6ED1BC6BC17002AAA71 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4602B6F81BC6BC17002AAA71 /* ChaterTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4602B6F31BC6BC17002AAA71 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4602B6D71BC6BC17002AAA71 /* Chater */;
-			targetProxy = 4602B6F21BC6BC17002AAA71 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4602B6E51BC6BC17002AAA71 /* Main.storyboard */ = {
@@ -703,14 +663,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xiangwang Huang (BC27KYGBBN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = chater/chater.pch;
 				INFOPLIST_FILE = Chater/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ecb84c7b-b780-49a2-b37d-8515f895e941";
+				PROVISIONING_PROFILE = "c67a1261-d054-4817-93f4-146a53333fa6";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
@@ -721,53 +681,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xiangwang Huang (BC27KYGBBN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = chater/chater.pch;
 				INFOPLIST_FILE = Chater/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ecb84c7b-b780-49a2-b37d-8515f895e941";
+				PROVISIONING_PROFILE = "c67a1261-d054-4817-93f4-146a53333fa6";
 				VALID_ARCHS = "armv7 armv7s arm64";
-			};
-			name = Release;
-		};
-		4602B6FF1BC6BC17002AAA71 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xiangwang Huang (BC27KYGBBN)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ChaterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ecb84c7b-b780-49a2-b37d-8515f895e941";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chater.app/Chater";
-			};
-			name = Debug;
-		};
-		4602B7001BC6BC17002AAA71 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xiangwang Huang (BC27KYGBBN)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ChaterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ecb84c7b-b780-49a2-b37d-8515f895e941";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chater.app/Chater";
 			};
 			name = Release;
 		};
@@ -788,15 +710,6 @@
 			buildConfigurations = (
 				4602B6FC1BC6BC17002AAA71 /* Debug */,
 				4602B6FD1BC6BC17002AAA71 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4602B6FE1BC6BC17002AAA71 /* Build configuration list for PBXNativeTarget "ChaterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4602B6FF1BC6BC17002AAA71 /* Debug */,
-				4602B7001BC6BC17002AAA71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

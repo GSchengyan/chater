@@ -12,6 +12,7 @@
 
 
 static IMManager *manager = nil;
+
 + (instancetype)sharedManager{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

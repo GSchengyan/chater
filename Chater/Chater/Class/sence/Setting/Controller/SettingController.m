@@ -7,8 +7,12 @@
 //
 
 #import "SettingController.h"
+#import "MyImageCell.h"
+#import "AVUser.h"
 
-@interface SettingController ()
+@interface SettingController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVUserAddFileDelegate>
+
+@property (nonatomic,strong) MyImageCell * imageCell;
 
 @end
 
@@ -17,40 +21,65 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MyImageCell" bundle:nil] forCellReuseIdentifier:@"imageCell"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return 0;
+    return 10;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
-    return cell;
+    if (indexPath.row == 0) {
+        
+        MyImageCell *imagecell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
+        imagecell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        self.imageCell = imagecell;
+        return imagecell;
+    }else{
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        cell.textLabel.text = @"设置项";
+        return cell;
+    }
 }
-*/
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        return 100;
+    }else{
+        return 44;
+    }
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        [self createPhoto];
+    }
+}
+
+- (void)createPhoto{
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.delegate = self;
+    ipc.allowsEditing = YES;
+    ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:ipc animated:YES completion:nil];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -95,5 +124,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    NSLog(@"%@",info);
+    UIImage *image = (UIImage *)info[@"UIImagePickerControllerOriginalImage"];
+    self.imageCell.img4Photo.image = image;
+    //TODO: 给扩展加代理
+//    [AVUser currentUser].fileDelegate = self;
+    [[AVUser currentUser] setPhoto:image];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+#pragma mark - AVUserAddFileDelegate
+
 
 @end
